@@ -1,3 +1,14 @@
+/*
+File: 01_variable.js
+
+Description:
+This file demonstrates how to declare and work with variables in JavaScript using modern best practices. It uses `const` for values that should never change and `let` for mutable values. It also shows how to output values using console.log and console.table, and illustrates block scoping. For more details, check out these MDN references:
+- const: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+- let: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+- console.table: https://developer.mozilla.org/en-US/docs/Web/API/Console/table
+- Block Scope: https://developer.mozilla.org/en-US/docs/Glossary/Block_scope
+*/
+
 // Declaring constants
 const accountId = 13123;  // once writen the value become constant, cannot be changed
 //example: accountId = 2   not allowed
@@ -33,4 +44,3 @@ console.table([accountId, accountEmail, accountPassword, accountCity, accountSta
 }
 
 // console.log(blockScopedVar); // ❌ Error: blockScopedVar is not defined
-
