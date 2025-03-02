@@ -1,0 +1,70 @@
+ * Latest MDN Summaries:
+ * - Array: "Used to store multiple values in a single variable; list-like objects with built-in methods for traversal and mutation."
+ * - push(): "Adds one or more elements to the end of an array and returns the new length."
+ * - pop(): "Removes the last element from an array and returns that element, changing the array's length."
+ * - unshift(): "Adds one or more elements to the beginning of an array and returns the new length."
+ * - shift(): "Removes the first element from an array and returns that element, changing the array's length."
+ * - includes(): "Determines whether an array includes a certain value among its entries, returning true or false."
+ * - indexOf(): "Returns the first index at which a given element can be found in the array, or -1 if it is not present."
+ * - join(): "Creates and returns a new string by concatenating all elements of the array, separated by commas (or a specified separator)."
+ * - slice(): "Returns a shallow copy of a portion of an array into a new array, without modifying the original."
+ */
+
+const myArr = [0, 1, 2, 3, 4, 5, 6, 6]; // Array literal; arrays can hold duplicate values.
+const myHeors = ["shaktiman", "allu arjin", "krish"];
+
+// Creating an array using the Array constructor.
+const myArr2 = new Array(1, 2, 3, 5);
+// console.log(myArr2)
+
+console.log(myArr[0]); // Access the first element.
+
+// Using push() to add an element at the end of the array.
+// Latest MDN: "Adds one or more elements to the end of an array and returns the new length."
+myArr.push(6);
+console.log(myArr);
+
+// Using pop() to remove the last element from the array.
+// Latest MDN: "Removes the last element from an array and returns that element, changing the array's length."
+myArr.pop();
+console.log(myArr);
+
+// Using unshift() to add an element at the beginning of the array.
+// Latest MDN: "Adds one or more elements to the beginning of an array and returns the new length."
+myArr.unshift(8);
+console.log(myArr);
+
+// Using shift() to remove the first element from the array.
+// Latest MDN: "Removes the first element from an array and returns that element, changing the array's length."
+myArr.shift();
+console.log(myArr);
+myArr.shift(); // Removing another first element.
+
+// Using includes() to check for an element in the array.
+// Latest MDN: "Determines whether an array includes a certain value among its entries, returning true or false."
+console.log(myArr.includes(89)); // false: 89 is not present.
+
+// Using indexOf() to find the index of a specific element.
+// Latest MDN: "Returns the first index at which a given element can be found in the array, or -1 if not present."
+console.log(myArr.indexOf(0)); // Returns -1 if not found.
+
+// Using join() to convert array elements into a string.
+// Latest MDN: "Creates and returns a new string by concatenating all the elements of an array, separated by commas or a specified separator."
+const newArr = myArr.join();
+console.log(newArr);
+console.log(myArr);
+
+// Confirming that the result of join() is a string.
+console.log(typeof newArr);  // "string"
+
+// Using slice() to extract a portion of the array into a new array.
+// Latest MDN: "Returns a shallow copy of a portion of an array into a new array, without modifying the original."
+console.log("A", myArr);
+const myn1 = myArr.slice(3, 6);
+console.log(myn1);
+
+// Additional examples (commented out) showing further use of slice().
+// console.log(myn1)
+// console.log("B", myArr)
+// const myn2 = myArr.slice(3,6)
+// console.log(myn2)
