@@ -7,64 +7,77 @@
  * - Template Literals: "String literals allowing embedded expressions, using backticks (`) and ${} for interpolation."
  * - undefined: "A primitive value automatically assigned to variables or parameters that have no value."
  * - Type Coercion: "Automatic conversion of values to another type (e.g., number to string) during operations like addition."
+ * - const: "Declares a block-scoped constant whose value cannot be reassigned after initialization."
+ * - Scope: "Determines the accessibility of variables. Includes global scope, function scope, and block scope."
  */
 
-// Basic function to calculate discount (MDN: "A reusable block of code")
-function calculateDiscount(price, discount) {
-    console.log(price - discount); // Type coercion may occur if inputs are strings
+// 
+/*
+function addTwoNumber(num1,num2){
+    console.log(num1+num2)
 }
-calculateDiscount(100, 20); // Outputs: 80
+addTwoNumber(2,3)
+*/
 
-// Function with mixed types
-function logUserInput(id, input) {
-    console.log(id, input); // Logs parameters as provided
+// function addStringNumber(num1,str){
+//     console.log(num1,str)
+// }
+// addStringNumber(1,"1")
+// addStringNumber(1,2)
+// addStringNumber(3,null)
+
+//returning of function value
+function add(a,b){
+    console.log(a+b)
 }
-logUserInput(1, "submit"); // Outputs: 1 "submit"
-logUserInput(2, 42); // Outputs: 2 42
-logUserInput(3, null); // Outputs: 3 null
+add(2,4)
+add(1,"2")
+const result1 = add(2,3)
+console.log("result:",result1) //undefine cause no value return 
 
-// Function without return
-function combineValues(val1, val2) {
-    console.log(val1 + val2); // Type coercion: number + string may concatenate
+function add2(a,b){
+//    let result = a+b
+//    return result   /* OR */
+return a+b
+   console.log("mew") /* unrechable below return */
 }
-combineValues(10, 5); // Outputs: 15
-combineValues(10, "5"); // Outputs: "105"
-const combined = combineValues(3, 4); // No return, so combined is undefined
-console.log("combined:", combined); // Outputs: combined: undefined
+const result = add2(2,2)
+console.log("result",result)
 
-// Function with return
-function multiplyValues(a, b) {
-    return a * b; // Returns product, code below is unreachable
-    console.log("done"); // Unreachable
+
+function loginUserMessage(userName){
+    
+    return `${userName} just logged in`
 }
-const product = multiplyValues(4, 5);
-console.log("product:", product); // Outputs: product: 20
+// console.log(loginUserMessage("iftikhar"))
+console.log(loginUserMessage(""))  /* Just loggin */
+console.log(loginUserMessage())
 
-// Function with template literal
-function welcomeMessage(user) {
-    return `${user} has joined the session`; // Interpolates user
-}
-console.log(welcomeMessage("Emma")); // Outputs: "Emma has joined the session"
-console.log(welcomeMessage()); // Outputs: "undefined has joined the session"
 
-// Function with validation
-function welcomeMessage(user) {
-    if (!user) { // Checks for falsy values (undefined, empty string)
-        console.log("Please provide a user name");
-        return; // Exits early
+function loginUserMessage(userName){
+    // if(userName === undefined){
+    //     console.log("please enter a username")
+    //     return
+    // }
+    if(!userName){
+        console.log("please enter a username")
+        return
     }
-    return `${user} has joined the session`;
+    return `${userName} just logged in`
 }
-console.log(welcomeMessage("Liam")); // Outputs: "Liam has joined the session"
-console.log(welcomeMessage()); // Outputs: "Please provide a user name"
+console.log(loginUserMessage())
 
-// Function with default parameter
-function welcomeMessage(user = "Guest") {
-    if (!user) {
-        console.log("Please provide a user name");
-        return;
+
+
+function loginUserMessage(userName ="sam"){
+    // if(userName === undefined){
+    //     console.log("please enter a username")
+    //     return
+    // }
+    if(!userName){
+        console.log("please enter a username")
+        return
     }
-    return `${user} has joined the session`;
+    return `${userName} just logged in`
 }
-console.log(welcomeMessage("Olivia")); // Outputs: "Olivia has joined the session"
-console.log(welcomeMessage()); // Outputs: "Guest has joined the session"
+console.log(loginUserMessage("ali")) /* If empty sam */
